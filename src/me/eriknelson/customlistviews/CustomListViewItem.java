@@ -16,5 +16,8 @@ limitations under the License.
 
 package me.eriknelson.customlistviews;
 
+import android.view.View;
+
 public abstract class CustomListViewItem {
+	public abstract View getView();
 }
