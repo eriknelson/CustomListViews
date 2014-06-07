@@ -16,15 +16,23 @@ limitations under the License.
 
 package me.eriknelson.customlistviews;
 
+import java.util.List;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 public class CustomListAdapter extends BaseAdapter {
 
+	private List<CustomListViewItem> mBackingItems;
+	
+	public CustomListAdapter(List<CustomListViewItem> backingItems){
+		mBackingItems = backingItems;
+	}
+
 	@Override
 	public int getCount() {
-		return 0;
+		return mBackingItems.size();
 	}
 
 	@Override
