@@ -18,15 +18,19 @@ package me.eriknelson.customlistviews;
 
 import java.util.List;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 public class CustomListAdapter extends BaseAdapter {
 
+	private Context mContext;
 	private List<CustomListViewItem> mBackingItems;
 	
-	public CustomListAdapter(List<CustomListViewItem> backingItems){
+	public CustomListAdapter(Context context, List<CustomListViewItem> backingItems){
+		mContext = context;
 		mBackingItems = backingItems;
 	}
 
@@ -47,7 +51,10 @@ public class CustomListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parentView) {
-		return mBackingItems.get(position).getView();
+		return mBackingItems.get(position).getView(
+				convertView,
+				(LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)
+        );
 	}
 
 }
