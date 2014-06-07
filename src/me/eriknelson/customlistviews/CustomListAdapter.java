@@ -47,7 +47,7 @@ public class CustomListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parentView) {
-		return null;
+		return mBackingItems.get(position).getView();
 	}
 
 }
