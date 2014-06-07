@@ -21,7 +21,11 @@ import android.view.View;
 
 public abstract class CustomListViewItem {
 	public View getView(View convertView, LayoutInflater inflater){
-		// TODO: To be implemented...
-		return null;
+		if(convertView == null){
+			convertView = inflater.inflate(getLayout(), null);
+		}
+		return convertView;
 	}
+	
+	protected abstract int getLayout();
 }
