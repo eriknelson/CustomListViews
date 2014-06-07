@@ -1,4 +1,8 @@
-Project License:
+###Tutorial Project
+Full source for my custom list views tutorial found here:
+http://eriknelson.me
+
+###Project License:
 
 Copyright (C) 2014 Erik Nelson
 
