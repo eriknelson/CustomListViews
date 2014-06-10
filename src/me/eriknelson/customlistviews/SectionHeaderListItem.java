@@ -56,6 +56,11 @@ public class SectionHeaderListItem extends CustomListViewItem {
 		return returnView;
 	}
 	
+	@Override
+	public int getViewTypeId(){
+		return 0;
+	}
+	
 	private static class ViewHolder{
 		TextView sectionHeaderView;
 	}

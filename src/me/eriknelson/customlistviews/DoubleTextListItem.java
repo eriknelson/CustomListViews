@@ -57,6 +57,11 @@ public class DoubleTextListItem extends CustomListViewItem {
 		return returnView;
 	}
 	
+	@Override
+	public int getViewTypeId(){
+		return 1;
+	}
+	
 	private static class ViewHolder{
 		TextView firstTextView;
 		TextView secondTextView;

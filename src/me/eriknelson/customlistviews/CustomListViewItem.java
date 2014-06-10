@@ -30,4 +30,15 @@ public abstract class CustomListViewItem {
 	
 	protected abstract int getLayout();
 	protected abstract Object getViewHolder(View v);
+	public abstract int getViewTypeId();
+	
+	public static int getViewTypeCount(){
+        //////////////////////////////
+        // Possible list items with ids
+        //////////////////////////////
+        // SectionHeaderListItem 0
+        // DoubleTextListItem 1
+        //////////////////////////////
+		return 2;
+	}
 }

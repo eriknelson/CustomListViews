@@ -56,5 +56,15 @@ public class CustomListAdapter extends BaseAdapter {
 				(LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)
         );
 	}
+	
+	@Override
+	public int getViewTypeCount(){
+		return CustomListViewItem.getViewTypeCount();
+	}
+	
+	@Override
+	public int getItemViewType(int position){
+		return mBackingItems.get(position).getViewTypeId();
+	}
 
 }
