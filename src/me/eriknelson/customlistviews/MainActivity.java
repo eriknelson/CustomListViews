@@ -36,9 +36,16 @@ public class MainActivity extends Activity {
 		
 		List<CustomListViewItem> backingItems = new ArrayList<CustomListViewItem>();
 		for(int i = 0; i < 2000; i++){
-			backingItems.add(new SectionHeaderListItem(
-					String.format("Row %d", i)
-					));
+			if(i % 2 == 0){
+                backingItems.add(new SectionHeaderListItem(
+                        String.format("Row %d", i)
+                ));
+			} else {
+				backingItems.add(new DoubleTextListItem(
+						String.format("First|row %d", i),
+						String.format("Second|row %d", i)
+                ));
+			}
 		}
 		
 		CustomListAdapter adapter = new CustomListAdapter(this, backingItems);
