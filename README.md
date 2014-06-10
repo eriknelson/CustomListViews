@@ -1,6 +1,5 @@
 ###Tutorial Project
-Full source for my custom list views tutorial found here:
-http://eriknelson.me
+Full source for my [custom list views tutorial](http://eriknelson.me/android-tutorial-non-uniform-listview-items-and-the-viewholder-pattern/)
 
 ###Project License:
 
