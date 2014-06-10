@@ -32,14 +32,31 @@ public class SectionHeaderListItem extends CustomListViewItem {
 	protected int getLayout(){
 		return R.layout.section_header;
 	}
+	
+	@Override
+	protected Object getViewHolder(View v){
+		ViewHolder vh =  new ViewHolder();
+		vh.sectionHeaderView = (TextView)v.findViewById(R.id.section_header_text);
+		return vh;
+	}
 
 	@Override
 	public View getView(View convertView, LayoutInflater inflater){
 		View returnView = super.getView(convertView, inflater);
 		
-		TextView sectionHeaderView = (TextView)returnView.findViewById(R.id.section_header_text);
+		// Retrieve the ViewHolder object to get the TextView reference
+		//	rather than calling findViewById repeatedly
+
+		//TextView sectionHeaderView = (TextView)returnView.findViewById(R.id.section_header_text);
+		ViewHolder vh = (ViewHolder)returnView.getTag();
+		TextView sectionHeaderView = vh.sectionHeaderView;
+
 		sectionHeaderView.setText(mHeaderText);
 		
 		return returnView;
+	}
+	
+	private static class ViewHolder{
+		TextView sectionHeaderView;
 	}
 }

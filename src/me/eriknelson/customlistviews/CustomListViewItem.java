@@ -23,9 +23,11 @@ public abstract class CustomListViewItem {
 	public View getView(View convertView, LayoutInflater inflater){
 		if(convertView == null){
 			convertView = inflater.inflate(getLayout(), null);
+			convertView.setTag(getViewHolder(convertView));
 		}
 		return convertView;
 	}
 	
 	protected abstract int getLayout();
+	protected abstract Object getViewHolder(View v);
 }
