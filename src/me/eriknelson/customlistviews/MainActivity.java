@@ -16,6 +16,9 @@ limitations under the License.
 
 package me.eriknelson.customlistviews;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -30,6 +33,17 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		
 		mListView = (ListView)findViewById(R.id.my_list_view);
+		
+		List<CustomListViewItem> backingItems = new ArrayList<CustomListViewItem>();
+		for(int i = 0; i < 2000; i++){
+			backingItems.add(new SectionHeaderListItem(
+					String.format("Row %d", i)
+					));
+		}
+		
+		CustomListAdapter adapter = new CustomListAdapter(this, backingItems);
+		
+		mListView.setAdapter(adapter);
 		
 	}
 
